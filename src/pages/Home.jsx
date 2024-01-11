@@ -65,7 +65,7 @@ const Home = () => {
             handlePageChange(`${ROUTES.SHOP}/${product.id}`)
             localStorage.setItem("activePage", (`${ROUTES.SHOP}/${product.id}`).toString());
           }}>
-          <img src={`${base}/${product.img}`} alt="" className="carousel-img"/>
+          <img src={`/${base}/${product.img}`} alt="" className="carousel-img"/>
           <div className="carousel-info carousel-info-on-sale" >
             <h3>{product.title}</h3>
             <div>
