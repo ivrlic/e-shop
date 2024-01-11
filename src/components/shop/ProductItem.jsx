@@ -16,6 +16,13 @@ const ProductItem = ({product, view}) => {
   const { addToCart } = useCart();
   const { handlePageChange } = useActivePage();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    });
+  };
+
   const isSale = onSale ? <p className="label-onsale">SALE</p> : ""
   const currentPrice = onSale 
       ?
@@ -31,6 +38,7 @@ const ProductItem = ({product, view}) => {
        <Link 
         to={`${ROUTES.SHOP}/${id}`}
         onClick={() => {
+          scrollToTop()
           handlePageChange(`${ROUTES.SHOP}/${id}`)
           localStorage.setItem("activePage", (`${ROUTES.SHOP}/${id}`).toString());
         }}>

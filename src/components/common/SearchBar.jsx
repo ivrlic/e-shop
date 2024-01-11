@@ -11,7 +11,9 @@ const SearchBar = () => {
   const navigate = useNavigate();
   const selectedResultRef = useRef(null);
   const { handlePageChange } = useActivePage();
-  const { products } = useProduct();
+
+  const url  = "../data/productData.json"
+  const { products } = useProduct(url);
 
   useEffect(() => {
     if (searchTerm.length > 0) {

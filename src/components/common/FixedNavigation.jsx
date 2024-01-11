@@ -19,7 +19,8 @@ const FixedNavigation = () => {
       const header = document.querySelector("header");
       const fixedNav = document.querySelector(".fixed-nav");
 
-      // Postavljanje fiksnog headera kad se dosegne vrh stranice
+      // showing or removing fixedNav (animated)
+      // depending if it was scrolled at the top of the page
       if (window.scrollY > (header.offsetHeight)) {
         fixedNav.classList.remove("hidden");
         fixedNav.classList.add("show");

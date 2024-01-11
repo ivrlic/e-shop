@@ -5,9 +5,10 @@ import { useCart } from "../context/CartContext.jsx";
 import { useActivePage } from "../context/ActivePageContext.jsx";
 
 const Product = () => {
+  const url  = "../data/productData.json"
 
   const { productId } = useParams();
-  const {product, loading, error} = getProductById(productId)  
+  const {product, loading, error} = getProductById(productId, url)  
   const { addToCart } = useCart();
   const { handlePageChange } = useActivePage();
 

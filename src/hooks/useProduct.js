@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import fetchData from "../utils/api.js";
 
-const useProduct = () => {
+const useProduct = (url) => {
   const [products, setProducts] = useState([]);
   const [onSaleProducts, setOnSaleProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url  = "/data/productData.json"
+  // const url  = "/data/productData.json"
 
   useEffect(() => {
     const getProducts = async () => {

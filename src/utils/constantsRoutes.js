@@ -1,10 +1,12 @@
+export const base = "e-shop"
+
 const ROUTES = {
-  HOME: "/",
-  SHOP: "/shop",
-  ABOUT: "/about",
-  CONTACT: "/contact",
-  PRODUCT: "/shop/:productId",
-  CART: "/shop/cart",
+  HOME: `/${base}`,
+  SHOP: `/${base}/shop`,
+  ABOUT: `/${base}/about`,
+  CONTACT: `/${base}/contact`,
+  PRODUCT: `/${base}/shop/:productId`,
+  CART: `/${base}/shop/cart`,
 };
 
 export default ROUTES;

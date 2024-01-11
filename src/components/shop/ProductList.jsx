@@ -3,7 +3,8 @@ import Pagination from "./Pagination.jsx";
 import ProductItem from "./ProductItem.jsx"
 
 const ProductList = ({ currentPage, setCurrentPage, selectedCategory, selectedSort, selectedView }) => {
-  const {products, loading, error} = useProduct();
+  const url  = "./data/productData.json"
+  const {products, loading, error} = useProduct(url);
   const productsPerPage = 12;
 
   // Filtering by category

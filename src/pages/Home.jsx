@@ -6,6 +6,7 @@ import ROUTES from "../utils/constantsRoutes.js";
 import useProduct from "../hooks/useProduct.js";
 import { Link } from "react-router-dom";
 import { useActivePage } from "../context/ActivePageContext.jsx";
+import { base } from "../utils/constantsRoutes.js";
 
 const Home = () => {
   const { handlePageChange } = useActivePage();
@@ -43,17 +44,28 @@ const Home = () => {
     )
   });
 
-  const { onSaleProducts, loading, error } = useProduct();
+
+  const url  = `/${base}/data/productData.json`
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto'
+    });
+  };
+
+  const { onSaleProducts, loading, error } = useProduct(url);
   const productsOnSaleHtml = onSaleProducts.map(product => {
     return (
       <div key={product.id} className="carousel-cont carousel-on-sale">
         <Link 
           to={`${ROUTES.SHOP}/${product.id}`}
           onClick={() => {
+            scrollToTop()
             handlePageChange(`${ROUTES.SHOP}/${product.id}`)
             localStorage.setItem("activePage", (`${ROUTES.SHOP}/${product.id}`).toString());
           }}>
-          <img src={product.img} alt="" className="carousel-img"/>
+          <img src={`${base}/${product.img}`} alt="" className="carousel-img"/>
           <div className="carousel-info carousel-info-on-sale" >
             <h3>{product.title}</h3>
             <div>
@@ -79,7 +91,8 @@ const Home = () => {
 
       <AboutSection />
 
-      {error ? 
+      {
+      error ? 
         ( <p className="error-msg">{error}</p> ) 
       : 
       loading ? 

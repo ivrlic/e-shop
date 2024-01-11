@@ -6,15 +6,6 @@ import routes from "./routes.jsx";
 
 function App() {
 
-  // u css-u komentar "za premjestit" i "OVO PREBACITI NEGDJE" je osta
-  // klik na user otvara novu stranicu??
-  // klik na send message - dobiješ neku poruku?
-  // css
-  // CHECKOUT IZ KOŠARICE JAVLJA PORUKU
-  // provjeri funkcionalnosti sve
-// prođi sve datoteke, napiši komentare i izbriši višak
-// backend: user, sendmessage, stanje košarice ...
-
   return (
       <BrowserRouter>
           <div>

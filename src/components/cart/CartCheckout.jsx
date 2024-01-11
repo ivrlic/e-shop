@@ -1,24 +1,3 @@
-// import { Link } from "react-router-dom";
-// import { useCart } from "../../context/CartContext.jsx";
-// import ROUTES from "../../utils/constantsRoutes.js";
-
-// const CartCheckout = ({ onCheckout }) => {
-//   const {clearCart} = useCart()
-
-//   return (
-//     <div className="cart-checkout-cont">
-//       <button>
-//         <Link to={ROUTES.SHOP}>Keep shopping</Link>
-//       </button>
-//       <button onClick={clearCart}>Clear all</button>
-//       <button onClick={onCheckout}>Checkout</button>
-//     </div>
-//   );
-// };
-
-// export default CartCheckout;
-
-
 import { Link } from "react-router-dom";
 import { useState } from "react"; 
 import { useCart } from "../../context/CartContext.jsx";

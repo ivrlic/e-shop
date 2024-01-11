@@ -1,7 +1,7 @@
 import CartItem from "./CartItem.jsx";
 
 const CartTable = ({ cart, onRemove }) => {
-  console.log(cart)
+
   return (
     <table className="cart-table">
       
