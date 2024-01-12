@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ROUTES from "../../utils/constantsRoutes.js";
 import useProduct from "../../hooks/useProduct.js";
 import { useActivePage } from "../../context/ActivePageContext.jsx";
+import { base } from "../../utils/constantsRoutes.js";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,7 +13,7 @@ const SearchBar = () => {
   const selectedResultRef = useRef(null);
   const { handlePageChange } = useActivePage();
 
-  const url  = "../data/productData.json"
+  const url  = `/${base}/data/productData.json`
   const { products } = useProduct(url);
 
   useEffect(() => {
